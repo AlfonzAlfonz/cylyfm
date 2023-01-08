@@ -6,15 +6,10 @@ use std::{thread, time::Duration};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
   let m = Manager::new()?;
-
   let min: Ratio = Ratio::new::<battery::units::ratio::ratio>(0.02);
-
+  
   let sl = Soloud::default()?;
-
   let mut speech = audio::Speech::default();
-
-  println!("{:?}", speech);
-
   speech.set_text("charge meeee")?;
 
   loop {
